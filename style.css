@@ -1,0 +1,659 @@
+body {
+  font-family: monospace;
+
+  background-color: rgb(37, 37, 37);
+}
+
+#title {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 20px;
+  font-size: 60px;
+  font-weight: 90;
+}
+#maindashcon {
+  width: 1200px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+#LogInContainer {
+  background-color: rgb(174, 174, 174);
+  border-radius: 8px;
+  width: 260px;
+  height: 145px;
+
+  margin: 20px auto;
+  margin-top: 200px;
+  padding: 11px;
+}
+#AccountSettingsErrorMessage {
+  color: white;
+  margin-left: 10px;
+}
+
+#rankupcurrtotal,
+#rankupnexttotal {
+  margin: 1px;
+}
+#Dashboard {
+  display: grid;
+  width: 1200px;
+  height: 100vh;
+  grid-gap: 10px;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+}
+#AccountInformationCon {
+  padding: 10px;
+  display: flex;
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+}
+#bestlift {
+  text-align: center;
+  font-size: 23px;
+  margin: 20px;
+}
+#mostrecentlift {
+  text-align: center;
+  margin: 20px;
+  font-size: 18px;
+  margin-top: 11px;
+}
+#ageofaccount {
+  text-align: center;
+  margin: 20px;
+  font-size: 23px;
+}
+#totalweightlifted {
+  text-align: center;
+  font-size: 23px;
+  margin: 20px;
+}
+#totalweigthtitle {
+  text-decoration: underline;
+  text-align: center;
+  margin: 0px;
+}
+#bestliftitle {
+  text-decoration: underline;
+  text-align: center;
+  margin: 0px;
+}
+#mostrecenttitle {
+  text-decoration: underline;
+  text-align: center;
+  margin: 0px;
+}
+#ageofaccounttitle {
+  text-decoration: underline;
+  text-align: center;
+  margin: 0px;
+}
+#rankuptitle {
+  text-decoration: underline;
+  text-align: center;
+  margin: 0px;
+  font-size: 13px;
+}
+#GreetingsMessageUsername {
+  margin: 6px;
+  margin-bottom: 0px;
+  margin-top: 2px;
+  font-size: 13px;
+}
+#GreetingsMessageAge {
+  margin: 6px;
+  margin-bottom: 0px;
+  font-size: 13px;
+}
+#GreetingsMessageUsername2 {
+  margin: 6px;
+  margin-top: 0px;
+  font-size: 17px;
+}
+#GreetingsMessageAge2 {
+  margin: 6px;
+  margin-top: 0px;
+  font-size: 17px;
+}
+
+#CurrentTotalMaxesCon {
+  padding: 10px;
+  grid-row: 1 / 2;
+  grid-column: 3 /6;
+}
+#AccountIcon {
+  padding: 7px;
+  padding-left: 7px;
+  padding-top: 16px;
+  width: 44px;
+}
+#CurrentGoalsContainer {
+  padding: 10px;
+  grid-row: 1 / 2;
+  grid-column: 6/8;
+}
+#CurrentGoalsTitle {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
+
+#CurrentGoalsSquat {
+  font-size: 11px;
+  margin: 6px;
+  margin-left: 7px;
+  width: max-content;
+}
+
+#CurrentGoalsBench {
+  font-size: 11px;
+  margin: 6px;
+  margin-left: 7px;
+  width: max-content;
+}
+#CurrentGoalsDeadlift {
+  font-size: 11px;
+  margin: 6px;
+  margin-left: 7px;
+  width: max-content;
+}
+#InputContainer {
+  grid-row: 1 / 3;
+  grid-column: 8 / 12;
+}
+#CurrentStatsTitle {
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  text-decoration: underline;
+}
+#NewAccountErrorMessage {
+  margin: 10px;
+  margin-left: 268px;
+}
+#NewAccountUpdatePopUp {
+  grid-row: 2/8;
+  grid-column: 3 / 10;
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 9.6px;
+  z-index: 8;
+  position: relative;
+  font-size: 14;
+}
+#GoalCommentPopUp {
+  background: #000000;
+  opacity: 0.9;
+  padding: 10px;
+  border-radius: 0px 8px 8px 8px;
+  border: 3px solid;
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  top: 228px;
+  left: 1111px;
+  margin-left: -400px;
+  margin-top: -40px;
+}
+#PopUpcommentTextGoal,
+#PopUpcommentTextComment {
+  color: aliceblue;
+}
+#tablecon {
+  height: 250px;
+  overflow: auto;
+}
+#rankupnumber1 {
+  font-size: 40px;
+  text-align: center;
+}
+#BlurBox {
+  grid-row: 1/9;
+  grid-column: 1 / 12;
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  font-size: 14;
+}
+#addupdateerror {
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 100px;
+}
+#CurrentTotal {
+  margin: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+#CurrentSBD {
+  text-align: center;
+  font-size: 14px;
+}
+#ActivityCon {
+  align-items: center;
+  padding: 10px;
+  grid-row: 3 / 6;
+  grid-column: 8 / 12;
+}
+#coolstat4 {
+  padding: 10px;
+  grid-row: 5/6;
+  grid-column: 8/10;
+}
+#coolstat2 {
+  padding: 10px;
+  grid-row: 3/4;
+  grid-column: 10/12;
+}
+#coolstat3 {
+  padding: 10px;
+  grid-row: 4/5;
+  grid-column: 8/10;
+}
+#coolstat1 {
+  padding: 10px;
+
+  grid-row: 3/4;
+  grid-column: 8/10;
+}
+#updategoaltexts {
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  display: inline-block;
+  width: 100px;
+  margin: 0px;
+  padding: 10px;
+  padding-left: 60px;
+  padding-right: 42px;
+}
+#updategoaltextb {
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  display: inline-block;
+  width: 100px;
+  margin: 0px;
+  padding: 10px;
+  padding-left: 60px;
+  padding-right: 42px;
+}
+#updategoaltextd {
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  display: inline-block;
+  width: 100px;
+  margin: 0px;
+  padding: 10px;
+  padding-left: 60px;
+  padding-right: 42px;
+}
+#coolstat5 {
+  padding: 10px;
+  grid-row: 4/6;
+  grid-column: 10/12;
+}
+
+#HowCloseTitle {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  text-decoration: underline;
+}
+#LeaderBoardTitle {
+  margin-top: 0px;
+  text-align: center;
+  text-decoration: underline;
+}
+#RankUpText {
+  text-align: center;
+}
+#rankupchartcon {
+  margin-left: 8px;
+  width: 180px;
+}
+#rankuppie {
+  height: 20px;
+}
+
+#LeaderboardTableCon {
+  font-size: 14px;
+  padding: 10px;
+  grid-row: 6 / 9;
+  grid-column: 7 / 12;
+}
+#LeaderBoardTable {
+  max-height: 100px;
+
+  overflow: auto;
+  border: 1px solid;
+  width: 100%;
+}
+#MainGraphCon {
+  grid-row: 2 / 6;
+  grid-column: 1 / 8;
+}
+#MinorGraphCon {
+  float: left;
+  display: inline;
+  padding: 10px;
+  grid-row: 6 / 9;
+  grid-column: 1 / 7;
+}
+#MinorGraphCon,
+#AddPrContent,
+#UpdateGoalsContent,
+#AccountSettingsContent {
+  padding: 10px;
+  padding-bottom: 5px;
+}
+#tablecon::-webkit-scrollbar {
+  width: 1em;
+}
+
+#tablecon::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#tablecon::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 0);
+  border: 2px solid;
+  border-color: #ffffff;
+}
+table {
+  border-collapse: collapse;
+}
+td,
+th {
+  border: 1px solid;
+  border-color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+thead {
+  background-color: #020202;
+  color: #ffffff;
+  position: sticky;
+}
+#tabledata {
+  overflow: auto;
+  height: 200px;
+}
+.loggedinrow {
+  color: white;
+}
+.DashboardBoxes {
+  background-color: rgb(174, 174, 174);
+  border-radius: 8px;
+}
+
+.DashboardSelectorButtonSel {
+  width: 143.33px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: white;
+  border-radius: 8px;
+}
+.DashboardSelectorButtonUnSel:hover {
+  width: 143.33px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border: rgb(192, 192, 192);
+}
+.DashboardSelectorButtonUnSel {
+  width: 143.33px;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  border: rgb(192, 192, 192);
+}
+.MainSelected {
+  width: 253.3px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: white;
+  border-radius: 8px;
+}
+
+.MainUnSelected {
+  width: 253.3px;
+
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  border: rgb(192, 192, 192);
+}
+.MainUnSelected:hover {
+  width: 253.3px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border: rgb(192, 192, 192);
+}
+#DonghnutGraphS {
+  margin-top: 30px;
+  margin-left: 10px;
+  padding: 10px;
+  width: 200px;
+}
+#DonghnutGraphB {
+  padding: 10px;
+  width: 200px;
+}
+#DonghnutGraphD {
+  padding: 10px;
+  width: 200px;
+}
+.Objects {
+  padding: 8px;
+  text-align: center;
+}
+
+#LoginButtonFin,
+#CreateAcoountFin {
+  margin-top: 1px;
+  width: 177px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+}
+#LoginButtonFin:hover,
+#CreateAcoountFin:hover {
+  color: black;
+  background-color: white;
+}
+#CreateAccountIN,
+#LogInIN {
+  margin-top: 1px;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+#CreateAccountIN:hover,
+#LogInIN:hover {
+  color: rgb(255, 255, 255);
+  cursor: default;
+}
+#ErorrSuccessMessage {
+  margin-top: 1px;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+}
+#settingsicon {
+  width: 20px;
+}
+#AddPrLiftSelector {
+  width: 389px;
+  margin: 10px;
+  margin-top: 15px;
+}
+#AddPrDateSelector {
+  margin: 10px;
+  width: 384px;
+}
+#AddPrAmountInput,
+#AddPrRepSelecor {
+  margin: 10px;
+  width: 186px;
+  margin-right: 0px;
+}
+
+#AddPrCommentInput {
+  margin: 10px;
+  width: 381px;
+}
+#AddPrFinalSubmitButton {
+  background-color: black;
+
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+  width: 389px;
+  margin-bottom: 0px;
+}
+#AddPrFinalSubmitButton:hover {
+  background-color: rgb(255, 255, 255);
+
+  width: 389px;
+  color: rgb(0, 0, 0);
+  margin: 10px;
+  margin-bottom: 0px;
+}
+#UpdateGoalsLiftSelector {
+  width: 389px;
+  margin: 10px;
+  margin-top: 15px;
+}
+#UpdateGoalsDateSelector,
+#UpdateGoalsAmountInput {
+  margin: 10px;
+  width: 178px;
+}
+
+#UpdateGoalsCommentInput {
+  margin: 10px;
+  width: 381px;
+}
+#LineGraph {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#UpdateGoalsFinalSubmitButton {
+  background-color: black;
+  border-radius: 2px;
+  color: white;
+  margin: 10px;
+
+  width: 389px;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+#UpdateGoalsFinalSubmitButton:hover {
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  color: rgb(0, 0, 0);
+  margin: 10px;
+  margin-bottom: 0px;
+  width: 389px;
+}
+#AccountSettingsLogOutButton:hover,
+#AccountSettingsDeleteAccountButton:hover {
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  color: rgb(0, 0, 0);
+  margin: 10px;
+  width: 184.5px;
+  margin-bottom: 0px;
+}
+#AccountSettingsLogOutButton,
+#AccountSettingsDeleteAccountButton {
+  background-color: rgb(0, 0, 0);
+  border-radius: 2px;
+  color: rgb(255, 255, 255);
+  margin: 10px;
+  width: 184.5px;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+
+#AccountSettingsPassInput {
+  width: 381px;
+  margin: 10px;
+}
+#AccountSettingsPassInputConfirm {
+  width: 381px;
+  margin: 10px;
+}
+#AccountSettingsChangePassword:hover {
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  color: rgb(0, 0, 0);
+  width: 389px;
+  margin: 10px;
+}
+#AccountSettingsChangePassword {
+  background-color: rgb(0, 0, 0);
+  border-radius: 2px;
+  color: rgb(255, 255, 255);
+  width: 389px;
+  margin: 10px;
+  cursor: pointer;
+}
+#NewAccountDateSelectorSqaut,
+#NewAccountDateSelectorBench,
+#NewAccountDateSelectorDeadlift,
+#NewAccountAmountInputSqaut,
+#NewAccountAmountInputBench,
+#NewAccountAmountInputDeadlift {
+  margin: 10px;
+  height: 30px;
+  width: 343px;
+}
+
+#NewAccountCommentInputSqaut,
+#NewAccountCommentInputBench,
+#NewAccountCommentInputDeadlift {
+  margin: 10px;
+  height: 30px;
+  width: 709px;
+}
+#NewAccountAmountCurInputSqaut,
+#NewAccountAmountCurInputBench,
+#NewAccountAmountCurInputDeadlift {
+  margin: 10px;
+  height: 30px;
+  width: 214px;
+}
+#NewAccountFinalSubmitButton {
+  background-color: black;
+  border-radius: 2px;
+  color: white;
+  margin: 10px;
+  height: 39px;
+  width: 719px;
+  font-size: 15px;
+  cursor: pointer;
+}
+#NewAccountFinalSubmitButton:hover {
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  color: rgb(0, 0, 0);
+  margin: 10px;
+  font-size: 15px;
+  height: 39px;
+  width: 719px;
+}
+.NewAccountMiniTitles {
+  margin: 0px;
+  margin-left: 10px;
+  font-size: 17px;
+}
+#NewAccountTitle {
+  font-size: 20px;
+  text-align: center;
+}
