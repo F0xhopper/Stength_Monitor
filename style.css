@@ -397,13 +397,6 @@ thead {
   border-radius: 8px;
 }
 
-.DashboardSelectorButtonSel {
-  width: 143.33px;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  border: white;
-  border-radius: 8px;
-}
 .DashboardSelectorButtonUnSel:hover {
   width: 143.33px;
   color: rgb(255, 255, 255);
@@ -416,14 +409,25 @@ thead {
   background-color: transparent;
   border: rgb(192, 192, 192);
 }
-.MainSelected {
-  width: 253.3px;
+.DashboardSelectorButtonUnSelDm {
+  width: 143.33px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border: rgb(192, 192, 192);
+}
+.DashboardSelectorButtonUnSelDm:hover {
+  width: 143.33px;
+  color: rgb(72, 72, 72);
+  background-color: transparent;
+  border: rgb(192, 192, 192);
+}
+.DashboardSelectorButtonSel {
+  width: 143.33px;
   background-color: rgb(0, 0, 0);
   color: white;
   border: white;
   border-radius: 8px;
 }
-
 .MainUnSelected {
   width: 253.3px;
 
@@ -436,6 +440,26 @@ thead {
   color: rgb(255, 255, 255);
   background-color: transparent;
   border: rgb(192, 192, 192);
+}
+.MainUnSelectedDm {
+  width: 253.3px;
+
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border: rgb(192, 192, 192);
+}
+.MainUnSelectedDm:hover {
+  width: 253.3px;
+  color: rgb(77, 77, 77);
+  background-color: transparent;
+  border: rgb(192, 192, 192);
+}
+.MainSelected {
+  width: 253.3px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: white;
+  border-radius: 8px;
 }
 #DonghnutGraphS {
   margin-top: 30px;
@@ -593,16 +617,75 @@ thead {
   background-color: rgb(255, 255, 255);
   border-radius: 2px;
   color: rgb(0, 0, 0);
-  width: 389px;
+  width: 184.5px;
   margin: 10px;
 }
 #AccountSettingsChangePassword {
   background-color: rgb(0, 0, 0);
   border-radius: 2px;
   color: rgb(255, 255, 255);
-  width: 389px;
+  width: 184.5px;
   margin: 10px;
   cursor: pointer;
+  float: left;
+}
+.AccountChangeDarkModeTicked:hover {
+  background-color: rgb(255, 255, 255);
+  border: 1px;
+
+  width: 18px;
+  height: 18px;
+  margin: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.AccountChangeDarkModeTicked {
+  background-color: rgb(255, 255, 255);
+  border: 1px;
+
+  padding-bottom: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  margin: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.AccountChangeDarkModeUnticked:hover {
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  padding-bottom: 5px;
+  color: transparent;
+
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  margin: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.AccountChangeDarkModeUnticked {
+  background-color: rgb(255, 255, 255);
+  border: 1px;
+  color: transparent;
+  padding-bottom: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  margin: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+#DarkModeH3 {
+  float: left;
+  width: 106px;
+  padding: 0px;
+  padding-top: 10px;
+  margin: 0px;
+  margin-left: 48px;
 }
 #NewAccountDateSelectorSqaut,
 #NewAccountDateSelectorBench,
@@ -656,4 +739,7 @@ thead {
 #NewAccountTitle {
   font-size: 20px;
   text-align: center;
+}
+.darkModeContainers {
+  background-color: rgb(22, 22, 22);
 }

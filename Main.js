@@ -147,6 +147,9 @@ const CurrentgoalBenchCon = document.querySelector("#CurrentgoalBenchCon");
 const CurrentgoalDeadliftCon = document.querySelector(
   "#CurrentgoalDeadliftCon"
 );
+const darkModeTickButton = document.querySelector("#darkModeTickButton");
+const AllDashboardContainers = document.querySelectorAll(".DashboardBoxes");
+const accountIcon = document.querySelector("#AccountIcon");
 //Simple Reusable
 function ClearingInputField(inputobject) {
   inputobject.value = "";
@@ -196,6 +199,7 @@ class Accounts {
     this.username = username;
     this.password = password;
     this.dateAccountCreated = undefined;
+    this.darkMode = false;
     this.Squat = {
       Lifts: [],
       goal: {
@@ -786,6 +790,68 @@ function ChangingCurrentStats() {
     CurrentSBD
   );
 }
+function updatingDarkMode() {
+  if (loggedInAccountObject.darkMode == false) {
+    darkModeTickButton.classList.remove("AccountChangeDarkModeTicked");
+    darkModeTickButton.classList.add("AccountChangeDarkModeUnticked");
+    document.body.style.background = "rgb(37, 37, 37)";
+    AllDashboardContainers.forEach((div) => {
+      div.style.background = "rgb(174, 174, 174)";
+      div.style.color = "black";
+    });
+    accountIcon.style.filter = "invert(0%)";
+    Chart.defaults.color = "black";
+    Chart.defaults.borderColor = "rgb(0, 0, 0,0.4)";
+    darkMainSelectorButtonsDarkmode();
+  } else if (loggedInAccountObject.darkMode == true) {
+    darkModeTickButton.classList.remove("AccountChangeDarkModeUnticked");
+    darkModeTickButton.classList.add("AccountChangeDarkModeTicked");
+    document.body.style.background = "rgb(0, 0, 0)";
+    AllDashboardContainers.forEach((div) => {
+      div.style.background = "rgb(22, 22, 22)";
+      div.style.color = "white";
+    });
+    accountIcon.style.filter = "invert(100%)";
+    Chart.defaults.color = "white";
+    Chart.defaults.line = "white";
+    Chart.defaults.borderColor = "rgb(255, 255, 255,0.4)";
+    darkMainSelectorButtonsDarkmode();
+  }
+}
+function darkMainSelectorButtonsDarkmode() {
+  if (loggedInAccountObject.darkMode == true) {
+    document.querySelectorAll(".MainUnSelected").forEach((div) => {
+      div.classList.add("MainUnSelectedDm");
+    });
+    document.querySelectorAll(".MainSelected").forEach((div) => {
+      div.classList.remove("MainUnSelectedDm");
+    });
+  } else if (loggedInAccountObject.darkMode == false) {
+    document.querySelectorAll(".MainUnSelected").forEach((div) => {
+      div.classList.remove("MainUnSelectedDm");
+    });
+  }
+}
+function darkSettingsSelectorButtonsDarkmode() {
+  if (loggedInAccountObject.darkMode == true) {
+    document
+      .querySelectorAll(".DashboardSelectorButtonUnSel")
+      .forEach((div) => {
+        div.classList.add("DashboardSelectorButtonUnSelDm");
+      });
+    document
+      .querySelectorAll(".DashboardSelectorButtonSel  ")
+      .forEach((div) => {
+        div.classList.remove("DashboardSelectorButtonUnSelDm");
+      });
+  } else if (loggedInAccountObject.darkMode == false) {
+    document
+      .querySelectorAll(".DashboardSelectorButtonUnSel")
+      .forEach((div) => {
+        div.classList.remove("DashboardSelectorButtonUnSelDm");
+      });
+  }
+}
 function UpdatingBestLift() {
   let array = [
     HeighestWEightOfArray(loggedInAccountObject.Squat.Lifts),
@@ -847,6 +913,8 @@ function UpdatingGoals() {
 }
 
 function UpdateAllDashboardUI() {
+  updatingDarkMode();
+
   ChangingCurrentStats();
   UpdatingGoals();
   UpdatingMainGraph();
@@ -856,10 +924,10 @@ function UpdateAllDashboardUI() {
   ChangeGreetingsMessage();
   UpdatingBestLift();
   UpdatingTotalWeight();
-
   UpdatingHowFarFromRankUpGraph();
   UpdatingRecentLift();
   UpdatingAgeOfAccount();
+  darkSettingsSelectorButtonsDarkmode();
 }
 
 //Making GoalComment Appear
@@ -897,7 +965,13 @@ function goalCommentDisappear() {
   UpdateGoalReusedFunction("Deadlift");
 }
 //  Pr's, updating goal and Account Settings UI and Funtions
-
+function changingDarkModeSettings() {
+  if (loggedInAccountObject.darkMode == true) {
+    loggedInAccountObject.darkMode = false;
+  } else {
+    loggedInAccountObject.darkMode = true;
+  }
+}
 function changingClickedButtonToSelected(button) {
   AllDashBoardSelectorButtons.forEach((element) => {
     if (element.classList.contains("DashboardSelectorButtonSel")) {
@@ -907,6 +981,7 @@ function changingClickedButtonToSelected(button) {
   });
   button.classList.toggle("DashboardSelectorButtonSel");
   button.classList.toggle("DashboardSelectorButtonUnSel");
+  darkSettingsSelectorButtonsDarkmode();
 }
 
 function ChangingContainerContent(event) {
@@ -979,6 +1054,7 @@ function ChangingMaingraphContent(event) {
     MainchangingClickedButtonToSelected(MainButtonSelectDeadlift);
     UpdatingMainGraph();
   }
+  darkMainSelectorButtonsDarkmode();
 }
 
 function NewAccountUpdatingAccount() {
@@ -1119,7 +1195,7 @@ function UpdatingGoalsLoggedInAccount() {
 ///Graphs
 Chart.defaults.font.size = 12;
 Chart.defaults.font.family = "monospace";
-Chart.defaults.color = "#000";
+Chart.defaults.color = "black";
 Chart.defaults.plugins.tooltip.width = 29;
 const MainGrpah = new Chart(LineGraph, {
   type: "line",
@@ -1277,6 +1353,11 @@ const init = function () {
   });
   LoggingOutButton.addEventListener("click", LoggingOut);
   ChangingPasswordButton.addEventListener("click", ChangingPasswwordLoggedIn);
+  darkModeTickButton.addEventListener("click", () => {
+    changingDarkModeSettings();
+    UpdatingLoggedInAccountValuesToLocalStorage();
+    UpdateAllDashboardUI();
+  });
   DeleteAccountButton.addEventListener("click", () => {
     DeletingAccount();
     LoggingOut();
